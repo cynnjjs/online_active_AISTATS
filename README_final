@@ -1,0 +1,26 @@
+1. Amazon Review dataset
+  (1) Download reviews_Automotive_5.json.gz, reviews_Grocery_and_Gourmet_Food_5.json.gz, reviews_Video_Games_5.json.gz from https://jmcauley.ucsd.edu/data/amazon/ and put them in the same directory as utils.py.
+  (2) Run 'python utils.py' to convert text into BERT features. Data should be stored in Bert_X_words.pkl and Bert_Y_words.pkl, concatenating 1200 Video, 600 Grocery, and 300 Auto reviews.
+  (3) Run 'python amazon_final.py 0' for 300 Auto + 600 Grocery + 1200 Games (Figure 1), output figure saved as Amazon_tradeoff.png.
+  (4) Run 'python amazon_final.py 1' for 1200 Games + 600 Grocery + 300 Auto (Figure 4a), output figure saved as Amazon_tradeoff.png.
+  (5) Run 'python amazon_final.py 2' for randomly shuffled inputs (Figure 4b), output figure saved as Amazon_tradeoff.png.
+
+2. Rotated MNIST dataset
+  (1) Run 'python vision_final.py mnist 0' for 60-degree duration 500, 30-degree duration 250, 0-degree duration 125 (Figure 1), output figure saved as MNIST_tradeoff.png.
+  (2) Run 'python vision_final.py mnist 1' for 60-degree duration 125, 30-degree duration 250, 0-degree duration 500 (Figure 4c), output figure saved as MNIST_tradeoff.png.
+  (3) Run 'python vision_final.py mnist 2' for 60-degree duration 250, 30-degree duration 250, 60-degree duration 125, 0-degree duration 125, 60-degree duration 125 (Figure 4d), output figure saved as MNIST_tradeoff.png.
+
+3. Portraits dataset
+  (1) Follow the instructions in https://github.com/p-lambda/gradual_domain_adaptation to download the portraits dataset, extract files, and run 'python create_dataset.py' to get dataset_32x32.mat. Save this file under the same directory as vision_final.py.
+  (2) Run 'python vision_final.py portraits 0' for durations 512, 256, 128, 64, 32 (Figure 1), output figure saved as Portraits_tradeoff.png.
+  (3) Run 'python vision_final.py portraits 1' for durations 32, 64, 128, 256, 512 (Figure 4e), output figure saved as Portraits_tradeoff.png.
+  (4) Run 'python vision_final.py portraits 2' for durations 200, 200, 200, 200, 200 (Figure 4f), output figure saved as Portraits_tradeoff.png.
+
+4. Synthetic and LIBSVM datasets
+  (1) Download https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/regression/abalone_scale and https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/regression/cpusmall_scale and save at the same directory as qufur.py.
+  (1) Run 'python qufur.py synthetic' for synthetic dataset (Figure 1), output figure saved as synthetic.png.
+  (2) Run 'python qufur.py cpusmall' for cpu-small dataset, output figure saved as cpusmall.png.
+  (3) Run 'python qufur.py abalone' for abalone dataset, output figure saved as abalone.png.
+
+5. Plotting Qufur's querying probability
+  (1) Run 'python vision_final.py mnist 1 plot' (Figure 3 adding exponential averaging with momentum 0.9), output figures saved as Query budget 27%.png, Query budget 43%.png, Query budget 66%.png.
